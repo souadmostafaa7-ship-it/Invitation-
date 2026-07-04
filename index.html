@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title> Our Wedding together | Ahmed & Roufida</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600;700&family=Cormorant+Garamond:wght@300;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+font-family:"Cairo",sans-serif;
+background:#fff;
+color:#2b2b2b;
+scroll-behavior:smooth;
+}
+
+/* 🌅 HERO */
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+position:relative;
+overflow:hidden;
+
+background:
+linear-gradient(120deg,
+rgba(255,210,170,.55),
+rgba(160,210,220,.35)),
+url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2200&q=80");
+
+background-size:cover;
+background-position:center;
+}
+
+/* clouds */
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:url("https://i.ibb.co/8gZt7Qz/clouds.png");
+background-size:cover;
+opacity:.15;
+animation:move 60s linear infinite;
+mix-blend-mode:screen;
+}
+
+@keyframes move{
+0%{transform:translateX(0);}
+100%{transform:translateX(-300px);}
+}
+
+.hero .small{
+font-size:28px;
+font-family:"Cormorant Garamond",serif;
+color:#fff;
+opacity:.9;
+position:relative;
+z-index:2;
+}
+
+.hero .names{
+font-size:74px;
+font-family:"Cormorant Garamond",serif;
+color:#fff;
+text-shadow:0 10px 35px rgba(0,0,0,.4);
+position:relative;
+z-index:2;
+margin:10px 0;
+}
+
+/* SECTIONS */
+section{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:60px;
+}
+
+/* 📖 VERSE */
+.verse{
+background:
+linear-gradient(120deg,rgba(255,245,235,.95),rgba(220,240,245,.9)),
+url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2000&q=80");
+background-size:cover;
+background-position:center;
+}
+
+.verse-box{
+background:rgba(255,255,255,.75);
+padding:25px;
+border-radius:18px;
+max-width:800px;
+backdrop-filter:blur(6px);
+}
+
+.verse p{
+font-size:19px;
+line-height:2.2;
+}
+
+/* 💍 DETAILS */
+.details{
+background:#f3efe8;
+}
+
+.title{
+font-size:42px;
+font-family:"Cormorant Garamond",serif;
+color:#6b8f71;
+margin-bottom:20px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+max-width:850px;
+width:100%;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 10px 20px rgba(0,0,0,.05);
+}
+
+/* 📍 LOCATION */
+.location{
+background:#fff;
+}
+
+.map-btn{
+display:inline-block;
+padding:12px 25px;
+border-radius:40px;
+background:linear-gradient(135deg,#9ad1c6,#e7d4aa);
+text-decoration:none;
+color:#111;
+font-weight:600;
+}
+
+/* ⏳ COUNTDOWN */
+.countdown{
+background:
+linear-gradient(120deg,rgba(10,40,60,.35),rgba(255,255,255,.2)),
+url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2000&q=80");
+background-size:cover;
+background-position:center;
+}
+
+.counter{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
+max-width:650px;
+margin:auto;
+}
+
+.box{
+background:rgba(255,255,255,.25);
+backdrop-filter:blur(8px);
+padding:12px;
+border-radius:12px;
+}
+
+.num{
+font-size:26px;
+font-weight:bold;
+color:#e7d4aa;
+}
+
+/* 💌 RSVP */
+.rsvp{
+background:
+linear-gradient(120deg,rgba(20,40,60,.55),rgba(10,20,30,.65)),
+url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2200&q=80");
+background-size:cover;
+color:white;
+}
+
+.option{
+background:rgba(255,255,255,.12);
+padding:16px;
+margin:10px auto;
+border-radius:12px;
+cursor:pointer;
+max-width:500px;
+}
+
+.option.selected{
+border:1px solid #9ad1c6;
+background:rgba(154,209,198,.25);
+}
+
+.msg{
+display:none;
+margin-top:10px;
+color:#9ad1c6;
+font-weight:600;
+}
+
+/* 💌 MESSAGE */
+.message{
+background:
+linear-gradient(120deg,rgba(10,30,40,.55),rgba(255,220,190,.3)),
+url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2200&q=80");
+background-size:cover;
+background-position:center;
+color:white;
+}
+
+input,textarea{
+width:80%;
+padding:12px;
+margin:8px;
+border-radius:10px;
+border:none;
+outline:none;
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:#e7d4aa;
+cursor:pointer;
+font-weight:600;
+}
+
+/* 🎵 BUTTON */
+.wave-btn{
+position:fixed;
+right:20px;
+bottom:20px;
+padding:12px 16px;
+border:none;
+border-radius:50px;
+background:#9ad1c6;
+cursor:pointer;
+z-index:999;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- 🌅 HERO -->
+<section class="hero">
+<div>
+<div class="small">Our Wedding</div>
+<div class="names">أحمد & رُفيدة</div>
+</div>
+</section>
+
+<!-- 📖 VERSE -->
+<section class="verse">
+<div class="verse-box">
+
+<p>
+بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيم<br><br>
+
+مِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا<br>
+لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَة
+</p>
+
+<br>
+
+<p style="color:#6b8f71;font-weight:600;">
+بكل الحب والمودة نحتفل ببداية حكايتنا الأجمل، وندعوكم لمشاركتنا فرحتنا.
+</p>
+
+</div>
+</section>
+
+<!-- 💍 DETAILS -->
+<section class="details">
+
+<div>
+<div class="title">تفاصيل الحفل</div>
+
+<div class="cards">
+<div class="card">📅 5 سبتمبر 2026</div>
+<div class="card">⏰ 8:00 PM - 12:00 AM</div>
+<div class="card">🌊 Sea Garden</div>
+<div class="card">👗 Ladies: Olive Green<br>🤵 Gentlemen: Black Suit</div>
+</div>
+
+</div>
+</section>
+
+<!-- 📍 LOCATION -->
+<section class="location">
+<div>
+
+<div class="title">Location</div>
+
+<a class="map-btn" href="https://maps.app.goo.gl/e3oWaZwTmCWPLuN2A?g_st=ac" target="_blank">
+Open Map 📍
+</a>
+
+</div>
+</section>
+
+<!-- ⏳ COUNTDOWN -->
+<section class="countdown">
+
+<div>
+
+<div class="title">Countdown</div>
+
+<div class="counter">
+
+<div class="box"><div class="num" id="d">00</div><div>Days</div></div>
+<div class="box"><div class="num" id="h">00</div><div>Hours</div></div>
+<div class="box"><div class="num" id="m">00</div><div>Min</div></div>
+<div class="box"><div class="num" id="s">00</div><div>Sec</div></div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- 💌 RSVP -->
+<section class="rsvp">
+
+<div>
+
+<div class="title" style="color:white;">تأكيد الحضور 💌</div>
+
+<div class="option" onclick="select(this)">💍 تشريف بالحضور</div>
+<div class="option" onclick="select(this)">🎉 هكون موجود/ة</div>
+<div class="option" onclick="select(this)">✨ حاضر بكل سعادة</div>
+<div class="option" onclick="select(this)">❤️ أتشرف أكون معاكم</div>
+
+<div class="msg" id="msg">We’re waiting you 💚</div>
+
+</div>
+
+</section>
+
+<!-- 💌 MESSAGE -->
+<section class="message">
+
+<div>
+
+<div class="title">Leave a Message</div>
+
+<input id="name" placeholder="Name">
+<br>
+<textarea id="msgBox" placeholder="Your wish..."></textarea>
+<br>
+<button onclick="saveMsg()">Send</button>
+
+<p id="done" style="display:none;color:#9ad1c6;">Saved 💚</p>
+
+</div>
+
+</section>
+
+<!-- 🌊 SOUND -->
+<button class="wave-btn" onclick="toggleWave()">🤍 ادخلي عمري</button>
+
+<audio id="wave" loop>
+<source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+/* RSVP */
+function select(el){
+document.querySelectorAll(".option").forEach(o=>o.classList.remove("selected"));
+el.classList.add("selected");
+document.getElementById("msg").style.display="block";
+}
+
+/* COUNTDOWN */
+let eventDate=new Date("2026-09-05T20:00:00").getTime();
+
+setInterval(()=>{
+let now=new Date().getTime();
+let diff=eventDate-now;
+
+document.getElementById("d").innerText=Math.floor(diff/86400000);
+document.getElementById("h").innerText=Math.floor((diff%86400000)/3600000);
+document.getElementById("m").innerText=Math.floor((diff%3600000)/60000);
+document.getElementById("s").innerText=Math.floor((diff%60000)/1000);
+
+},1000);
+
+/* SAVE MESSAGE */
+function saveMsg(){
+let name=document.getElementById("name").value;
+let msg=document.getElementById("msgBox").value;
+
+if(msg.trim()==="") return;
+
+let arr=JSON.parse(localStorage.getItem("msgs")||"[]");
+arr.push({name,msg});
+localStorage.setItem("msgs",JSON.stringify(arr));
+
+document.getElementById("done").style.display="block";
+}
+
+/* WAVES */
+let wave=document.getElementById("wave");
+
+function toggleWave(){
+if(wave.paused){
+wave.play();
+}else{
+wave.pause();
+}
+}
+
+</script>
+
+</body>
+</html>
